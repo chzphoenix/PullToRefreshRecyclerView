@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.huichongzhi.pulltorefresh_recyclerview.library.PullToRefreshRecyclerView;
@@ -31,7 +32,7 @@ public class DemoActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             pullToRefreshRecyclerView.onRefreshComplete();
-            recyclerView.addHeaderView(header1);
+            Toast.makeText(DemoActivity.this, "refresh complete!", Toast.LENGTH_SHORT).show();
         }
     };
 

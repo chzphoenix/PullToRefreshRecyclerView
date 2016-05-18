@@ -13,8 +13,7 @@ import java.util.ArrayList;
 
 /**
  * @author chz
- * @description
- * @date 2016/3/17 14:38
+ * 2016/3/17 14:38
  */
 public class WrapRecyclerView extends RecyclerView {
 

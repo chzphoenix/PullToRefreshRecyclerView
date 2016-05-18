@@ -9,8 +9,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 
 /**
  * @author chz
- * @description
- * @date 2016/3/15 14:10
+ * 2016/3/15 14:10
  */
 public class PullToRefreshRecyclerView extends PullToRefreshBase<WrapRecyclerView>{
     public PullToRefreshRecyclerView(Context context) {
