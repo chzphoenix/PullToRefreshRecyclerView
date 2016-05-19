@@ -89,7 +89,7 @@ bintray {
         name = "PullToRefreshRecyclerView"    //发布到JCenter上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
-        licenses = ["PullToRefreshRecyclerView"]
+        licenses = ["Apache-2.0"]
         publish = true
     }
 }
