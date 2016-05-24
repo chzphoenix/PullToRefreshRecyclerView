@@ -1,7 +1,6 @@
 package com.huichongzi.pulltorefresh_recyclerview;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Handler;
 import android.os.Message;
@@ -16,8 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.huichongzhi.pulltorefresh_recyclerview.library.PullToRefreshRecyclerView;
-import com.huichongzhi.pulltorefresh_recyclerview.library.WrapRecyclerView;
+import com.huichongzhi.pulltorefresh_recyclerview.pulltorefresh_recyclerview_library.PullToRefreshRecyclerView;
+import com.huichongzhi.pulltorefresh_recyclerview.pulltorefresh_recyclerview_library.WrapRecyclerView;
 
 public class DemoActivity extends AppCompatActivity {
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.huichongzi.pulltorefresh_recyclerview.DemoActivity">
 
-    <com.huichongzhi.pulltorefresh_recyclerview.library.PullToRefreshRecyclerView
+    <com.huichongzhi.pulltorefresh_recyclerview.pulltorefresh_recyclerview_library.PullToRefreshRecyclerView
         android:id="@+id/pulltorefresh_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

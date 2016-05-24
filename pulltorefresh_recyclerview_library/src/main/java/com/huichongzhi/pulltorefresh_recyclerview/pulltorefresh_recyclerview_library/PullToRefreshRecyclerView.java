@@ -1,4 +1,4 @@
-package com.huichongzhi.pulltorefresh_recyclerview.library;
+package com.huichongzhi.pulltorefresh_recyclerview.pulltorefresh_recyclerview_library;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
