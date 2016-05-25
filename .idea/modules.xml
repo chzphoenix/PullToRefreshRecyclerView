@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PullToRefreshRecyclerView.iml" filepath="$PROJECT_DIR$/PullToRefreshRecyclerView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pulltorefresh_recyclerview_library/pulltorefresh_recyclerview_library.iml" filepath="$PROJECT_DIR$/pulltorefresh_recyclerview_library/pulltorefresh_recyclerview_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pulltorefresh-recyclerview/pulltorefresh-recyclerview.iml" filepath="$PROJECT_DIR$/pulltorefresh-recyclerview/pulltorefresh-recyclerview.iml" />
     </modules>
   </component>
 </project>

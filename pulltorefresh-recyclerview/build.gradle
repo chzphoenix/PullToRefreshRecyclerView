@@ -2,14 +2,14 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version "1.0.2"
+version "1.0.4"
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
     defaultConfig {
         minSdkVersion 8
-        versionCode 3
+        versionCode 5
         versionName version
     }
     buildTypes {
@@ -22,13 +22,13 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.+'
-    compile 'com.loopeer.android.thirdparty:pulltorefresh:2.1.1'
     compile 'com.android.support:recyclerview-v7:23.+'
+    compile 'com.loopeer.android.thirdparty:pulltorefresh:2.1.1'
 }
 
 def siteUrl = 'https://github.com/chzphoenix/PullToRefreshRecyclerView' // 项目的主页
 def gitUrl = 'https://github.com/chzphoenix/PullToRefreshRecyclerView.git' // Git仓库的url
-group = "com.huichongzhi.pulltorefresh_recyclerview" // Maven Group ID for the artifact，一般填你唯一的包名
+group = "com.hcz.fastwidget" // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -47,8 +47,8 @@ install {
                 }
                 developers {
                     developer {
-                        id 'huichongzhi'    //填写的一些基本信息
-                        name 'huichongzhi'
+                        id 'huichongzi'    //填写的一些基本信息
+                        name 'huichongzi'
                         email 'chzphoenix@163.com'
                     }
                 }

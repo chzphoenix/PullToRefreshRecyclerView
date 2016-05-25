@@ -1,4 +1,4 @@
-package com.huichongzi.pulltorefresh_recyclerview;
+package com.hcz.fastwidget;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -15,8 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.huichongzhi.pulltorefresh_recyclerview.pulltorefresh_recyclerview_library.PullToRefreshRecyclerView;
-import com.huichongzhi.pulltorefresh_recyclerview.pulltorefresh_recyclerview_library.WrapRecyclerView;
+import com.hcz.fastwidget.p2r4recyclerview.PullToRefreshRecyclerView;
+import com.hcz.fastwidget.p2r4recyclerview.WrapRecyclerView;
 
 public class DemoActivity extends AppCompatActivity {
 
