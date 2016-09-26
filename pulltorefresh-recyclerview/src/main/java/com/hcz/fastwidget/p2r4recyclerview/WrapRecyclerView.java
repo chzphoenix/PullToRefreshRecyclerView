@@ -1,6 +1,8 @@
 package com.hcz.fastwidget.p2r4recyclerview;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -80,6 +82,70 @@ public class WrapRecyclerView extends RecyclerView {
         scrollToPosition(position);
     }
 
+    public void setTransparentDivider(final int sizePx){
+        addItemDecoration(new ItemDecoration() {
+            @Override
+            public void onDraw(Canvas c, RecyclerView parent, State state) {
+                super.onDraw(c, parent, state);
+            }
+
+            @Override
+            public void onDrawOver(Canvas c, RecyclerView parent, State state) {
+                super.onDrawOver(c, parent, state);
+            }
+
+            @Override
+            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, State state) {
+                int position = ((LayoutParams) view.getLayoutParams()).getViewLayoutPosition();
+                int index = position - mWrapAdapter.getHeaderCount();
+
+                if(index < 0){
+                    super.getItemOffsets(outRect, view, parent, state);
+                    return;
+                }
+
+                if(isEnd(parent, index)){
+                    if(isVertical(parent)){
+                        outRect.set(0, 0, 0, sizePx);
+                    }
+                    else{
+                        outRect.set(0, 0, sizePx, 0);
+                    }
+                }
+                else{
+                    outRect.set(0, 0, sizePx, sizePx);
+                }
+            }
+
+            private boolean isVertical(RecyclerView parent){
+                LayoutManager layout = parent.getLayoutManager();
+                if(layout instanceof StaggeredGridLayoutManager){
+                    return ((StaggeredGridLayoutManager) layout).getOrientation() == StaggeredGridLayoutManager.VERTICAL;
+                }
+                else if(layout instanceof LinearLayoutManager){
+                    return ((LinearLayoutManager) layout).getOrientation() == LinearLayoutManager.VERTICAL;
+                }
+                return true;
+            }
+
+            private int getSpanCount(RecyclerView parent){
+                LayoutManager layout = parent.getLayoutManager();
+                if(layout instanceof GridLayoutManager){
+                    return ((GridLayoutManager) layout).getSpanCount();
+                }
+                if(layout instanceof StaggeredGridLayoutManager){
+                    return ((StaggeredGridLayoutManager) layout).getSpanCount();
+                }
+                return 1;
+            }
+
+            private boolean isEnd(RecyclerView parent, int index){
+                int spanCount = getSpanCount(parent);
+                return (index + 1) % spanCount == 0;
+            }
+        });
+    }
+
     @Override
     public void setLayoutManager(final LayoutManager layout) {
         if(layout instanceof GridLayoutManager){
@@ -137,8 +203,7 @@ public class WrapRecyclerView extends RecyclerView {
             firstPosition = ((GridLayoutManager) layoutManager).findFirstVisibleItemPosition();
         }
         if(layoutManager instanceof StaggeredGridLayoutManager){
-            int[] positions = null;
-            ((StaggeredGridLayoutManager) layoutManager).findFirstVisibleItemPositions(positions);
+            int[] positions = ((StaggeredGridLayoutManager) layoutManager).findFirstVisibleItemPositions(null);
             firstPosition = positions[0];
         }
         return firstPosition;
@@ -155,8 +220,7 @@ public class WrapRecyclerView extends RecyclerView {
             lastPosition = ((GridLayoutManager) layoutManager).findLastVisibleItemPosition();
         }
         if(layoutManager instanceof StaggeredGridLayoutManager){
-            int[] positions = null;
-            ((StaggeredGridLayoutManager) layoutManager).findLastVisibleItemPositions(positions);
+            int[] positions = ((StaggeredGridLayoutManager) layoutManager).findLastVisibleItemPositions(null);
             lastPosition = positions[positions.length - 1];
         }
         return lastPosition;

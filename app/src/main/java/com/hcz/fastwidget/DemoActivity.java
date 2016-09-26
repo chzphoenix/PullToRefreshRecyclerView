@@ -6,8 +6,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,21 +61,8 @@ public class DemoActivity extends AppCompatActivity {
         });
         recyclerView = pullToRefreshRecyclerView.getRefreshableView();
         MyAdapter adapter = new MyAdapter();
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
-            @Override
-            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-                super.onDraw(c, parent, state);
-                Paint p = new Paint();
-                p.setColor(0xffcccccc);
-                int size = parent.getChildCount();
-                for(int i = 0; i < size; i++){
-                    int top = parent.getChildAt(i).getBottom();
-                    int right = parent.getChildAt(i).getRight();
-                    c.drawRect(0, top, right, top + 4, p);
-                }
-            }
-        });
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setTransparentDivider(10);
         recyclerView.setAdapter(adapter);
 
         header1 = LayoutInflater.from(this).inflate(R.layout.wrap_recycleview_header, null);

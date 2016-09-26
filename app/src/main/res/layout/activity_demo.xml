@@ -8,6 +8,7 @@
 
     <com.hcz.fastwidget.p2r4recyclerview.PullToRefreshRecyclerView
         android:id="@+id/pulltorefresh_recyclerview"
+        android:background="#cccccc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </RelativeLayout>
