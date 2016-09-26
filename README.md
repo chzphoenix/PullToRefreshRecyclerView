@@ -16,14 +16,14 @@ WrapRecyclerView is extendsed on RecyclerView with adding Header and Footer just
 # Using library in your application
 #####Gradle dependency:
 ``` groovy
-compile 'com.huichongzhi.pulltorefresh_recyclerview:pulltorefresh_recyclerview_library:1.0.2'
+compile 'com.hcz.fastwidget:pulltorefresh-recyclerview:1.0.4'
 ```
 #####Maven dependency:
 ```xml
 <dependency>
-  <groupId>com.huichongzhi.pulltorefresh_recyclerview</groupId>
-  <artifactId>pulltorefresh_recyclerview_library</artifactId>
-  <version>1.0.2</version>
+  <groupId>com.hcz.fastwidget</groupId>
+  <artifactId>pulltorefresh-recyclerview</artifactId>
+  <version>1.0.4</version>
   <type>pom</type>
 </dependency>
 ```
