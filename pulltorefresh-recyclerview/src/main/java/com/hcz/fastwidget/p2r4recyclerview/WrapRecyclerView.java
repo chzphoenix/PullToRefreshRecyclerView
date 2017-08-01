@@ -149,11 +149,15 @@ public class WrapRecyclerView extends RecyclerView {
     @Override
     public void setLayoutManager(final LayoutManager layout) {
         if(layout instanceof GridLayoutManager){
+            final GridLayoutManager.SpanSizeLookup old = ((GridLayoutManager) layout).getSpanSizeLookup();
             ((GridLayoutManager) layout).setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
                 @Override
                 public int getSpanSize(int position) {
                     if(mWrapAdapter.isHeader(position) || mWrapAdapter.isFooter(position)){
                         return ((GridLayoutManager) layout).getSpanCount();
+                    }
+                    if(old != null){
+                        return old.getSpanSize(position - mWrapAdapter.getHeaderCount());
                     }
                     return 1;
                 }
