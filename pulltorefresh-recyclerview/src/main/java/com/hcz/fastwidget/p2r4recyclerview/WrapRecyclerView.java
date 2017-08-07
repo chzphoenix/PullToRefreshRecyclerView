@@ -97,13 +97,13 @@ public class WrapRecyclerView extends RecyclerView {
             @Override
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, State state) {
                 int position = ((LayoutParams) view.getLayoutParams()).getViewLayoutPosition();
-                int index = position - mWrapAdapter.getHeaderCount();
 
-                if(index < 0){
+                if(mWrapAdapter.isHeader(position) || mWrapAdapter.isFooter(position)){
                     super.getItemOffsets(outRect, view, parent, state);
                     return;
                 }
 
+                int index = position - mWrapAdapter.getHeaderCount();
                 if(isEnd(parent, index)){
                     if(isVertical(parent)){
                         outRect.set(0, 0, 0, sizePx);
