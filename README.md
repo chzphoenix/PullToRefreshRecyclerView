@@ -1,3 +1,15 @@
+# WrapRecyclerView
+
+This is a RecyclerView with some extra function, such as header/footer, OnItemClickListener, OnItemLongClickListener, etc.
+
+The function of header and footer supports all types of LayoutManager, shown in the screenshots below
+![](https://github.com/chzphoenix/PullToRefreshRecyclerView/blob/master/linear.png)
+![](https://github.com/chzphoenix/PullToRefreshRecyclerView/blob/master/grid.png)
+![](https://github.com/chzphoenix/PullToRefreshRecyclerView/blob/master/staggered.png)
+
+Pls refer to the demo or read the source codes.
+
+
 # PullToRefreshRecyclerView
 
 This is a project based on RecyclerView with pull-to-refresh feature.
